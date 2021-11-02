@@ -1,0 +1,43 @@
+fields:
+  ligado:
+    name: Sistema Ligado
+    type: bool
+  direcao:
+    name: Direção atual
+    type: string
+    init-value: PARADO
+    middleware: direcao.py
+  velocidade:
+    name: Velocidade
+    type: int
+    init-value: 20
+  sensor_direito:
+    name: Sensor Infravermelho Direito
+    type: bool
+    input:
+      io:
+        port: 24
+        type: digital
+  sensor_esquerdo:
+    name: Sensor Infravermelho Esquerdo
+    type: bool
+    input:
+      io:
+        port: 25
+        type: digital
+  motor_direito:
+    name: Motor Direito
+    type: int
+    middleware: motor_direito.py
+    output:
+      io:
+        port: 23 
+        type: pwm
+  motor_esquerdo:
+    name: Motor Esquerdo
+    type: int
+    middleware: motor_esquerdo.py
+    output:
+      io:
+        port: 17
+        type: pwm
